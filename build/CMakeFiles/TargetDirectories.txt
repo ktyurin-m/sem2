@@ -1,0 +1,7 @@
+/home/kirill/nir/geant4/sem2/build/CMakeFiles/install/strip.dir
+/home/kirill/nir/geant4/sem2/build/CMakeFiles/install/local.dir
+/home/kirill/nir/geant4/sem2/build/CMakeFiles/install.dir
+/home/kirill/nir/geant4/sem2/build/CMakeFiles/list_install_components.dir
+/home/kirill/nir/geant4/sem2/build/CMakeFiles/rebuild_cache.dir
+/home/kirill/nir/geant4/sem2/build/CMakeFiles/edit_cache.dir
+/home/kirill/nir/geant4/sem2/build/CMakeFiles/exampleB2a.dir
