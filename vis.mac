@@ -54,6 +54,7 @@
 #
 # Draw hits at end of event:
 /vis/scene/add/hits
+/vis/scene/add/axes 
 #
 # To draw only gammas:
 #/vis/filtering/trajectories/create/particleFilter

@@ -1,0 +1,6 @@
+/run/initialize
+/globalField/setValue 0 333 0 G
+/gun/energy 50 MeV
+/gun/particle e-
+/run/beamOn 50000
+

@@ -14,4 +14,3 @@
 #
 # Visualization setting
 /control/execute vis.mac
-/vis/scene/add/axes

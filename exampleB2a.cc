@@ -40,6 +40,7 @@
 
 #include "G4VisExecutive.hh"
 #include "G4UIExecutive.hh"
+#include "G4HadronicProcessStore.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -68,8 +69,9 @@ int main(int argc,char** argv)
 
   G4VModularPhysicsList* physicsList = new FTFP_BERT;
   physicsList->RegisterPhysics(new G4StepLimiterPhysics());
+  
   runManager->SetUserInitialization(physicsList);
-
+  G4HadronicProcessStore::Instance()->SetVerbose(0);
   // Set user action classes
   runManager->SetUserInitialization(new project::ActionInitialization());
 
