@@ -176,7 +176,7 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes()
   //
   // Sets a max step length in the tracker region, with G4StepLimiter
 
-  G4double maxStep = 1*cm;
+  G4double maxStep = 1*mm;
   fStepLimit = new G4UserLimits(maxStep);
   worldLV->SetUserLimits(fStepLimit);
 
