@@ -43,7 +43,6 @@ target_link_libraries(project ${Geant4_LIBRARIES})
 #
 set(PROJECT_SCRIPTS
   checkprogram.in
-  exampleB2.in
   gui.mac
   init_vis.mac
   vis.mac

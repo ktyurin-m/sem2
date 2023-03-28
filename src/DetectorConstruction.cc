@@ -82,6 +82,7 @@ void DetectorConstruction::DefineMaterials()
   // Xenon gas defined using NIST Manager
   fChamberMaterial = nistManager->FindOrBuildMaterial("G4_Xe");
 
+  Fe = nistManager->FindOrBuildMaterial("G4_Fe");
   // Print materials
   // G4cout << *(G4Material::GetMaterialTable()) << G4endl;
 }
@@ -97,7 +98,7 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes()
 
 
   // Definitions of Solids, Logical Volumes, Physical Volumes
-  G4double boxsize = 5*m;
+  G4double boxsize = 10*m;
   // World
 
   G4GeometryManager::GetInstance()->SetWorldMaximumExtent(boxsize);
@@ -168,6 +169,20 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes()
                     
 
   //~~~~
+  //magnit
+  G4Box* magnet = new G4Box("Box", 5*m,5*m,5*m);
+  
+  Magnet = new G4LogicalVolume(magnet, Fe,"Box");
+  
+  new G4PVPlacement(0,
+                    G4ThreeVector(0,0,0),
+                    Magnet,
+                    "Box",
+                    worldLV,
+                    false,
+                    0,
+                    fCheckOverlaps);
+                    
 
   // Example of User Limits
   //
