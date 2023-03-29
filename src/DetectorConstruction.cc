@@ -15,8 +15,9 @@
 #include "G4LogicalVolume.hh"
 #include "G4PVPlacement.hh"
 #include "G4GlobalMagFieldMessenger.hh"
+#include "G4MagneticField.hh"
 #include "G4AutoDelete.hh"
-
+#include "G4UniformMagField.hh"
 #include "G4GeometryTolerance.hh"
 #include "G4GeometryManager.hh"
 
@@ -27,6 +28,7 @@
 
 #include "G4SystemOfUnits.hh"
 
+#include "G4FieldManager.hh"
 using namespace project;
 
 namespace project
@@ -34,8 +36,9 @@ namespace project
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-G4ThreadLocal
-G4GlobalMagFieldMessenger* DetectorConstruction::fMagFieldMessenger = nullptr;
+// G4ThreadLocal MagneticField* DetectorConstruction::fMagneticField = 0;
+G4ThreadLocal G4FieldManager* DetectorConstruction::fFieldMgr = 0;
+G4ThreadLocal G4MagneticField* DetectorConstruction::fMagF = 0;
 
 DetectorConstruction::DetectorConstruction()
 {
@@ -82,7 +85,7 @@ void DetectorConstruction::DefineMaterials()
   // Xenon gas defined using NIST Manager
   fChamberMaterial = nistManager->FindOrBuildMaterial("G4_Xe");
 
-  Fe = nistManager->FindOrBuildMaterial("G4_Fe");
+  Fe = nistManager->FindOrBuildMaterial("G4_AIR");
   // Print materials
   // G4cout << *(G4Material::GetMaterialTable()) << G4endl;
 }
@@ -170,14 +173,14 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes()
 
   //~~~~
   //magnit
-  G4Box* magnet = new G4Box("Box", 5*m,5*m,5*m);
+  G4Box* magnet = new G4Box("Box1", 5*m,5*m,5*m);
   
-  Magnet = new G4LogicalVolume(magnet, Fe,"Box");
+  Magnet = new G4LogicalVolume(magnet, Fe,"Box1");
   
   new G4PVPlacement(0,
                     G4ThreeVector(0,0,0),
                     Magnet,
-                    "Box",
+                    "Box1",
                     worldLV,
                     false,
                     0,
@@ -225,12 +228,14 @@ void DetectorConstruction::ConstructSDandField()
   // Create global magnetic field messenger.
   // Uniform magnetic field is then created automatically if
   // the field value is not zero.
-  G4ThreeVector fieldValue = G4ThreeVector();
-  fMagFieldMessenger = new G4GlobalMagFieldMessenger(fieldValue);
-  fMagFieldMessenger->SetVerboseLevel(1);
+  G4ThreeVector fieldValue = G4ThreeVector(0, 333.333*gauss,0);
+  fMagF = new G4UniformMagField(fieldValue);
+  fFieldMgr = new G4FieldManager(fMagF);
+  Magnet->SetFieldManager(fFieldMgr,true);
+
 
   // Register the field messenger for deleting
-  G4AutoDelete::Register(fMagFieldMessenger);
+  G4AutoDelete::Register(fMagF);
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

@@ -33,7 +33,9 @@
 #include "globals.hh"
 #include "G4VUserDetectorConstruction.hh"
 #include "tls.hh"
-
+#include "MagneticField.hh"
+#include "G4FieldManager.hh"
+#include "G4MagneticField.hh"
 class G4VPhysicalVolume;
 class G4LogicalVolume;
 class G4Material;
@@ -68,9 +70,11 @@ class DetectorConstruction : public G4VUserDetectorConstruction
     // methods
     void DefineMaterials();
     G4VPhysicalVolume* DefineVolumes();
-
+    // static G4ThreadLocal MagneticField* fMagneticField;
+    static G4ThreadLocal G4FieldManager* fFieldMgr;
+    static G4ThreadLocal G4MagneticField* fMagF;
     // static data members
-    static G4ThreadLocal G4GlobalMagFieldMessenger*  fMagFieldMessenger;
+    // static G4ThreadLocal G4GlobalMagFieldMessenger*  fMagFieldMessenger;
                                          // magnetic field messenger
     // data members
     G4int fNbOfChambers = 0;
