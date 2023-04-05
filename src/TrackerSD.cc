@@ -64,8 +64,9 @@ G4bool TrackerSD::ProcessHits(G4Step* aStep,
     aStep->GetPreStepPoint()->GetPosition())
     );
   
+  
   fHitsCollection->insert( newHit );
-
+  
   return true;
 }
 

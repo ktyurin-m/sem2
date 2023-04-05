@@ -40,7 +40,7 @@ void RunAction::BeginOfRunAction(const G4Run*)
   //inform the runManager to save random number seed
   G4RunManager::GetRunManager()->SetRandomNumberStore(false);
   auto analysisManager = G4AnalysisManager::Instance();
-  analysisManager->OpenFile( "B2out.root" );
+  analysisManager->OpenFile( "out.root" );
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

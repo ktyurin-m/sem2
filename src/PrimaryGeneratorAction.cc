@@ -51,11 +51,23 @@ void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   // from G4LogicalVolumeStore.
 
   G4double worldZHalfLength = 0;
+  G4double dist = 0;
   G4LogicalVolume* worldLV
     = G4LogicalVolumeStore::GetInstance()->GetVolume("World");
+
+  G4LogicalVolume* Magnet = G4LogicalVolumeStore::GetInstance()->GetVolume("Box1");
+  
   G4Box* worldBox = nullptr;
+  G4Box* magnet = nullptr;
   if ( worldLV ) worldBox = dynamic_cast<G4Box*>(worldLV->GetSolid());
   if ( worldBox ) worldZHalfLength = worldBox->GetZHalfLength();
+  G4double length = 2*m;
+  G4double width = 0;
+  if ( Magnet ) {
+    magnet = dynamic_cast<G4Box*>(Magnet->GetSolid());
+    dist = std::abs(length + magnet->GetZHalfLength());
+    width = 150/2*mm;
+  }
   else  {
     G4cerr << "World volume of box not found." << G4endl;
     G4cerr << "Perhaps you have changed geometry." << G4endl;
@@ -64,8 +76,12 @@ void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 
   // Note that this particular case of starting a primary particle on the world boundary
   // requires shooting in a direction towards inside the world.
-  fParticleGun->SetParticlePosition(G4ThreeVector(0., 0., -worldZHalfLength));
+  
+  G4double b = 0.5*m;
+  angle = std::atan(length/b);
 
+  fParticleGun->SetParticlePosition(G4ThreeVector(-(width + b), 0., -dist));
+  fParticleGun->SetParticleMomentumDirection(G4ThreeVector(std::cos(angle), 0, std::sin(angle)));
   fParticleGun->GeneratePrimaryVertex(anEvent);
 }
 

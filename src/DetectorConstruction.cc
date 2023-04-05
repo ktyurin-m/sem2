@@ -44,16 +44,16 @@ DetectorConstruction::DetectorConstruction()
 {
   
 
-  fNbOfChambers = 5;
-  fLogicChamber = new G4LogicalVolume*[fNbOfChambers];
+  // fNbOfChambers = 5;
+  // fLogicChamber = new G4LogicalVolume*[fNbOfChambers];
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 DetectorConstruction::~DetectorConstruction()
 {
-  delete [] fLogicChamber;
-  delete fStepLimit;
+  // delete [] fLogicChamber;
+  // delete fStepLimit;
   
 }
 
@@ -85,7 +85,7 @@ void DetectorConstruction::DefineMaterials()
   // Xenon gas defined using NIST Manager
   fChamberMaterial = nistManager->FindOrBuildMaterial("G4_Xe");
 
-  Fe = nistManager->FindOrBuildMaterial("G4_AIR");
+  Fe = nistManager->FindOrBuildMaterial("G4_Fe");
   // Print materials
   // G4cout << *(G4Material::GetMaterialTable()) << G4endl;
 }
@@ -101,7 +101,7 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes()
 
 
   // Definitions of Solids, Logical Volumes, Physical Volumes
-  G4double boxsize = 10*m;
+  G4double boxsize = 3.3*m;
   // World
 
   G4GeometryManager::GetInstance()->SetWorldMaximumExtent(boxsize);
@@ -156,12 +156,13 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes()
 
   //box
 
-  G4Box* solidbox = new G4Box("Box", 1*cm,5*m,5*m);
-  
+  G4Box* solidbox = new G4Box("Box", 30*cm,10*cm,2*cm);
   Box = new G4LogicalVolume(solidbox,fTargetMaterial,"Box");
-  
-  new G4PVPlacement(0,
-                    G4ThreeVector(boxsize + 1*cm - 1*mm,0,0),
+  G4RotationMatrix* rotate = new G4RotationMatrix();
+  rotate->rotateY(3.141/2 - 1.32582);
+
+  new G4PVPlacement(rotate,
+                    G4ThreeVector(0,0,1600/2*mm + 10*cm),
                     
                     Box,
                     "Box",
@@ -173,7 +174,11 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes()
 
   //~~~~
   //magnit
-  G4Box* magnet = new G4Box("Box1", 5*m,5*m,5*m);
+  G4double lengthM = 1600/2*mm;
+  G4double widthM  = 500/2*mm;
+  G4double heightM = 280/2*mm;
+
+  G4Box* magnet = new G4Box("Box1", widthM, heightM, lengthM);
   
   Magnet = new G4LogicalVolume(magnet, Fe,"Box1");
   
@@ -186,6 +191,23 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes()
                     0,
                     fCheckOverlaps);
                     
+  //gap
+  G4double lengthG = 1600/2*mm;
+  G4double widthG  = 310/2*mm;
+  G4double heightG = 20/2*mm;
+  G4Box* gap = new G4Box("Box2", widthG,heightG,lengthG+1*mm);
+
+  Gap = new G4LogicalVolume(gap, air,"Box2");
+  
+  new G4PVPlacement(0,
+                    G4ThreeVector(0,0,0),
+                    Gap,
+                    "Box2",
+                    worldLV,
+                    false,
+                    2,
+                    fCheckOverlaps);
+
 
   // Example of User Limits
   //
@@ -228,11 +250,11 @@ void DetectorConstruction::ConstructSDandField()
   // Create global magnetic field messenger.
   // Uniform magnetic field is then created automatically if
   // the field value is not zero.
-  G4ThreeVector fieldValue = G4ThreeVector(0, 333.333*gauss,0);
+  G4ThreeVector fieldValue = G4ThreeVector(0, -2000*gauss,0);
   fMagF = new G4UniformMagField(fieldValue);
   fFieldMgr = new G4FieldManager(fMagF);
-  Magnet->SetFieldManager(fFieldMgr,true);
-
+  
+  Gap->SetFieldManager(fFieldMgr,true);
 
   // Register the field messenger for deleting
   G4AutoDelete::Register(fMagF);

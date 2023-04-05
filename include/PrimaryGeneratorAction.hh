@@ -58,7 +58,7 @@ class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
 
     // Set methods
     void SetRandomFlag(G4bool );
-
+    G4double angle = 0;
   private:
     G4ParticleGun* fParticleGun = nullptr; // G4 particle gun
 };
