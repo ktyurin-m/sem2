@@ -60,7 +60,7 @@ G4bool TrackerSD::ProcessHits(G4Step* aStep,
                                                ->GetCopyNumber());
   newHit->SetEdep(edep);
   auto touchable = aStep->GetPreStepPoint()->GetTouchable();
-
+  auto transform = touchable->GetHistory()->GetTopTransform();
   auto worldPos = aStep->GetPreStepPoint()->GetPosition();
   auto localPos
     = touchable->GetHistory()->GetTopTransform().TransformPoint(worldPos);
@@ -81,13 +81,13 @@ void TrackerSD::EndOfEvent(G4HCofThisEvent*)
 {
   // if ( true ) {
   G4int nofHits = fHitsCollection->entries();
-    //  G4cout << G4endl
-    //         << "-------->Hits Collection: in this event they are " << nofHits
-    //         << " hits in the tracker chambers: " << G4endl;
-    //  for ( G4int i=0; i<nofHits; i++ ) {
-    //    G4cout << i << " " << (*fHitsCollection)[i]->GetEdep() << G4endl;
-    //   };
-  // }
+     G4cout << G4endl
+            << "-------->Hits Collection: in this event they are " << nofHits
+            << " hits in the tracker chambers: " << G4endl;
+     for ( G4int i=0; i<nofHits; i++ ) {
+       G4cout << i << " " << (*fHitsCollection)[i]->GetPos().getZ() << G4endl;
+      };
+  
   auto analysisManager = G4AnalysisManager::Instance();
   for (G4int i = 0; i < nofHits; i++)
   {

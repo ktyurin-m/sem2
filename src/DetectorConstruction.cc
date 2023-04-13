@@ -154,15 +154,15 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes()
 
 
 
-  //box
+  //detector
 
-  G4Box* solidbox = new G4Box("Box", 30*cm,10*cm,2*cm);
+  G4Box* solidbox = new G4Box("Box", 15*cm,15*cm,5*cm);
   Box = new G4LogicalVolume(solidbox,fTargetMaterial,"Box");
   G4RotationMatrix* rotate = new G4RotationMatrix();
   rotate->rotateY(0.2520249);
 
   new G4PVPlacement(rotate,
-                    G4ThreeVector(0,0,1600/2*mm + 10*cm),
+                    G4ThreeVector(-(75*mm-15*mm) - 0.5*m - 8*mm - 0.34*mm,0, 1600/2*mm + 2*m),
                     
                     Box,
                     "Box",
