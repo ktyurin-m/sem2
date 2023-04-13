@@ -60,8 +60,13 @@ G4bool TrackerSD::ProcessHits(G4Step* aStep,
                                                ->GetCopyNumber());
   newHit->SetEdep(edep);
   auto touchable = aStep->GetPreStepPoint()->GetTouchable();
-  newHit->SetPos (touchable->GetHistory()->GetTopTransform().TransformPoint(
-    aStep->GetPreStepPoint()->GetPosition())
+
+  auto worldPos = aStep->GetPreStepPoint()->GetPosition();
+  auto localPos
+    = touchable->GetHistory()->GetTopTransform().TransformPoint(worldPos);
+  
+  newHit->SetPos (
+    localPos
     );
   
   

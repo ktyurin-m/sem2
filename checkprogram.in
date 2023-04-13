@@ -1,6 +1,5 @@
 /run/initialize
-
-/gun/energy 50 MeV
+/gun/energy 196412831.06 eV
 /gun/particle e-
-/globalField/setValue 0 333 0 G
-/run/beamOn 1000
+
+/run/beamOn 1

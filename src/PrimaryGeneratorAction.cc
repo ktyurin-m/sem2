@@ -80,7 +80,7 @@ void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   G4double b = 0.5*m;
   angle = std::atan(length/b);
 
-  fParticleGun->SetParticlePosition(G4ThreeVector(-(width + b), 0., -dist));
+  fParticleGun->SetParticlePosition(G4ThreeVector(-(width - 15*mm + b), 0., -dist));
   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(std::cos(angle), 0, std::sin(angle)));
   fParticleGun->GeneratePrimaryVertex(anEvent);
 }

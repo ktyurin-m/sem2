@@ -77,7 +77,7 @@ void DetectorConstruction::DefineMaterials()
   G4NistManager* nistManager = G4NistManager::Instance();
 
   // Air defined using NIST Manager
-  nistManager->FindOrBuildMaterial("G4_AIR");
+  nistManager->FindOrBuildMaterial("G4_Galactic");
 
   // Lead defined using NIST Manager
   fTargetMaterial  = nistManager->FindOrBuildMaterial("G4_Au");
@@ -94,7 +94,7 @@ void DetectorConstruction::DefineMaterials()
 
 G4VPhysicalVolume* DetectorConstruction::DefineVolumes()
 {
-  G4Material* air  = G4Material::GetMaterial("G4_AIR");
+  G4Material* air  = G4Material::GetMaterial("G4_Galactic");
   
   // Sizes of the principal geometrical components (solids)
 
@@ -159,7 +159,7 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes()
   G4Box* solidbox = new G4Box("Box", 30*cm,10*cm,2*cm);
   Box = new G4LogicalVolume(solidbox,fTargetMaterial,"Box");
   G4RotationMatrix* rotate = new G4RotationMatrix();
-  rotate->rotateY(3.141/2 - 1.32582);
+  rotate->rotateY(0.2520249);
 
   new G4PVPlacement(rotate,
                     G4ThreeVector(0,0,1600/2*mm + 10*cm),
