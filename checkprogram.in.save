@@ -2,4 +2,5 @@
 
 /gun/energy 196412831.06 eV
 /gun/particle e-
-/globalField/setValue 0 3run/beamOn 1
+/globalField/setValue 0 
+run/beamOn 1

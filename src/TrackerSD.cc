@@ -48,7 +48,7 @@ G4bool TrackerSD::ProcessHits(G4Step* aStep,
                                      G4TouchableHistory*)
 {
   // energy deposit
-  if (aStep->GetTrack()->GetTrackID() != 1) return false;
+ 
   G4double edep = aStep->GetTotalEnergyDeposit();
   
   if (edep==0.) return false;

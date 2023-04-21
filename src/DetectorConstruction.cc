@@ -156,7 +156,7 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes()
 
   //detector
 
-  G4Box* solidbox = new G4Box("Box", 15*cm,15*cm,5*cm);
+  G4Box* solidbox = new G4Box("Box", 4*m,4*m,5*cm);
   Box = new G4LogicalVolume(solidbox,fTargetMaterial,"Box");
   G4RotationMatrix* rotate = new G4RotationMatrix();
   rotate->rotateY(0.2520249);
@@ -250,7 +250,7 @@ void DetectorConstruction::ConstructSDandField()
   // Create global magnetic field messenger.
   // Uniform magnetic field is then created automatically if
   // the field value is not zero.
-  G4ThreeVector fieldValue = G4ThreeVector(0, -2000*gauss,0);
+  G4ThreeVector fieldValue = G4ThreeVector(0, -10182.6341*gauss,0);
   fMagF = new G4UniformMagField(fieldValue);
   fFieldMgr = new G4FieldManager(fMagF);
   
