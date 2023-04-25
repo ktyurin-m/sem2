@@ -33,7 +33,7 @@
 #include "G4VUserPrimaryGeneratorAction.hh"
 #include "globals.hh"
 
-class G4ParticleGun;
+class G4GeneralParticleSource;
 class G4Event;
 
 namespace project
@@ -54,13 +54,13 @@ class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
 
     void GeneratePrimaries(G4Event* ) override;
 
-    G4ParticleGun* GetParticleGun() {return fParticleGun;}
+    G4GeneralParticleSource* GetParticleGun() {return fParticleGun;}
 
     // Set methods
     void SetRandomFlag(G4bool );
     G4double angle = 0;
   private:
-    G4ParticleGun* fParticleGun = nullptr; // G4 particle gun
+    G4GeneralParticleSource* fParticleGun = nullptr; // G4 particle gun
 };
 
 }
