@@ -245,12 +245,12 @@ void DetectorConstruction::ConstructSDandField()
   G4SDManager::GetSDMpointer()->AddNewDetector(aTrackerSD);
   // Setting aTrackerSD to all logical volumes with the same name
   // of "Chamber_LV".
-  SetSensitiveDetector("Box", aTrackerSD, true);
+  SetSensitiveDetector("Box", aTrackerSD, false);
 
   // Create global magnetic field messenger.
   // Uniform magnetic field is then created automatically if
   // the field value is not zero.
-  G4ThreeVector fieldValue = G4ThreeVector(0, -10182.6341*gauss,0);
+  G4ThreeVector fieldValue = G4ThreeVector(0, -2*10182.6341*gauss,0);
   fMagF = new G4UniformMagField(fieldValue);
   fFieldMgr = new G4FieldManager(fMagF);
   

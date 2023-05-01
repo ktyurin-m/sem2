@@ -1,0 +1,29 @@
+/run/initialize
+/gps/particle e-
+#energy:
+/gps/ene/type Gauss
+/gps/ene/mono 2 GeV
+/gps/ene/sigma 0 MeV
+
+
+#postion:
+#/gps/direction -0.2493 0 -0.968
+#	/gps/direction 1 0 0
+/gps/position -560 0 -2800 mm
+
+
+/gps/pos/type Plane
+/gps/pos/shape Circle
+/gps/pos/radius 10 cm
+/gps/pos/rot1 -0.2493 0 0.968
+
+
+#angle:
+#/gps/ang/rot1 0.2493 0 0.968
+/gps/ang/rot1 -0.9899 0 0.1416
+#/gps/ang/rot1 1 0 0
+/gps/ang/type iso
+/gps/ang/minphi -15 deg
+/gps/ang/maxphi 15 deg
+/gps/ang/maxtheta 15 deg
+/run/beamOn 100000

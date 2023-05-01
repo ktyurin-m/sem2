@@ -5,4 +5,4 @@
 /gps/ene/sigma 200 MeV
 /gps/direction 0.2493 0 0.968
 /gps/position -560 0 -2800 mm
-/run/beamOn 10000
+/run/beamOn 1

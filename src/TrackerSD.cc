@@ -49,16 +49,19 @@ G4bool TrackerSD::ProcessHits(G4Step* aStep,
 {
   // energy deposit
  
-  G4double edep = aStep->GetTotalEnergyDeposit();
   
-  if (edep==0.) return true;
+  // G4cout << aStep->GetTrack()->GetTrackID() << G4endl;
+  // if (aStep->GetTrack()->GetTrackID() != 1) return false;
+  G4double edep = aStep->GetTotalEnergyDeposit();
+  // G4cout << aStep->GetTrack()->GetTrackID() << G4endl;
+  if (edep==0.) return false;
   TrackerHit* newHit = new TrackerHit();
   if (GetTouch()==true){
 
-  newHit->SetTrackID  (aStep->GetTrack()->GetTrackID());
-  newHit->SetChamberNb(aStep->GetPreStepPoint()->GetTouchableHandle()
-                                               ->GetCopyNumber());
-  newHit->SetEdep(edep);
+  //newHit->SetTrackID  (aStep->GetTrack()->GetTrackID());
+  //newHit->SetChamberNb(aStep->GetPreStepPoint()->GetTouchableHandle()
+                                               //->GetCopyNumber());
+  //newHit->SetEdep(edep);
   auto touchable = aStep->GetPreStepPoint()->GetTouchable();
   auto transform = touchable->GetHistory()->GetTopTransform();
   auto worldPos = aStep->GetPreStepPoint()->GetPosition();
@@ -68,7 +71,7 @@ G4bool TrackerSD::ProcessHits(G4Step* aStep,
     localPos
     );
     fHitsCollection->insert( newHit );
-    G4cout << "ffffasd" << G4endl;
+
     SetTouch(false);
   }
   AddEdep(edep);
@@ -97,10 +100,10 @@ void TrackerSD::EndOfEvent(G4HCofThisEvent*)
     analysisManager->FillNtupleDColumn(1, (*fHitsCollection)[0]->GetPos().getY());
     analysisManager->FillNtupleDColumn(2, (*fHitsCollection)[0]->GetPos().getZ());  
     analysisManager->FillNtupleDColumn(3, GetEdep()); 
-
     analysisManager->AddNtupleRow();
-    SetEdep(0);
   }
+  G4cout << GetEdep() << G4endl;
+  SetEdep(0);
    
 
   
