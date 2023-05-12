@@ -21,6 +21,7 @@ namespace project
 {
 
 class DetectorMessenger;
+class MagneticField;
 
 /// Detector construction class to define materials, geometry
 /// and global uniform magnetic field.
@@ -47,7 +48,7 @@ class DetectorConstruction : public G4VUserDetectorConstruction
     G4VPhysicalVolume* DefineVolumes();
     // static G4ThreadLocal MagneticField* fMagneticField;
     static G4ThreadLocal G4FieldManager* fFieldMgr;
-    static G4ThreadLocal G4MagneticField* fMagF;
+    static G4ThreadLocal MagneticField* magField;
     // static data members
     // static G4ThreadLocal G4GlobalMagFieldMessenger*  fMagFieldMessenger;
                                          // magnetic field messenger

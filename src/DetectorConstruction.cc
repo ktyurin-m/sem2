@@ -9,14 +9,14 @@
 #include "G4Material.hh"
 #include "G4NistManager.hh"
 #include "G4SDManager.hh"
-
+#include "MagneticField.hh"
 #include "G4Box.hh"
 #include "G4Tubs.hh"
 #include "G4LogicalVolume.hh"
 #include "G4PVPlacement.hh"
 #include "G4GlobalMagFieldMessenger.hh"
-#include "G4MagneticField.hh"
 #include "G4AutoDelete.hh"
+#include "G4MagneticField.hh"
 #include "G4UniformMagField.hh"
 #include "G4GeometryTolerance.hh"
 #include "G4GeometryManager.hh"
@@ -38,7 +38,7 @@ namespace project
 
 // G4ThreadLocal MagneticField* DetectorConstruction::fMagneticField = 0;
 G4ThreadLocal G4FieldManager* DetectorConstruction::fFieldMgr = 0;
-G4ThreadLocal G4MagneticField* DetectorConstruction::fMagF = 0;
+G4ThreadLocal MagneticField* DetectorConstruction::magField = 0;
 
 DetectorConstruction::DetectorConstruction()
 {
@@ -101,7 +101,7 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes()
 
 
   // Definitions of Solids, Logical Volumes, Physical Volumes
-  G4double boxsize = 3.3*m;
+  G4double boxsize = 5*m;
   // World
 
   G4GeometryManager::GetInstance()->SetWorldMaximumExtent(boxsize);
@@ -156,14 +156,13 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes()
 
   //detector
 
-  G4Box* solidbox = new G4Box("Box", 4*m,4*m,5*cm);
+  G4Box* solidbox = new G4Box("Box", 0.5*m,0.5*m,5*cm);
   Box = new G4LogicalVolume(solidbox,fTargetMaterial,"Box");
   G4RotationMatrix* rotate = new G4RotationMatrix();
-  rotate->rotateY(0.2520249);
+  rotate->rotateY(15.64165 * deg);
 
   new G4PVPlacement(rotate,
-                    G4ThreeVector(-(75*mm-15*mm) - 0.5*m - 8*mm - 0.34*mm,0, 1600/2*mm + 2*m),
-                    
+                    G4ThreeVector(-560,0, 1600/2*mm + 2*m),
                     Box,
                     "Box",
                     worldLV,
@@ -250,14 +249,16 @@ void DetectorConstruction::ConstructSDandField()
   // Create global magnetic field messenger.
   // Uniform magnetic field is then created automatically if
   // the field value is not zero.
-  G4ThreeVector fieldValue = G4ThreeVector(0, -2*10182.6341*gauss,0);
-  fMagF = new G4UniformMagField(fieldValue);
-  fFieldMgr = new G4FieldManager(fMagF);
+
+  //MAGNETIC FIELD
+  magField = new MagneticField();
+  fFieldMgr = new G4FieldManager();
+  fFieldMgr->SetDetectorField(magField);
+  fFieldMgr->CreateChordFinder(magField);
   
   Gap->SetFieldManager(fFieldMgr,true);
 
   // Register the field messenger for deleting
-  G4AutoDelete::Register(fMagF);
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

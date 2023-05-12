@@ -8,7 +8,7 @@
 
 class G4GenericMessenger;
 
-namespace B5
+namespace project
 {
 
 /// Magnetic field
@@ -27,7 +27,6 @@ class MagneticField : public G4MagneticField
   private:
     void DefineCommands();
 
-    G4GenericMessenger* fMessenger = nullptr;
     G4double fBy = 1.0*CLHEP::tesla;
 };
 

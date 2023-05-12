@@ -46,7 +46,6 @@ set(PROJECT_SCRIPTS
   gui.mac
   init_vis.mac
   vis.mac
-  p1.mac
   )
 
 foreach(_script ${PROJECT_SCRIPTS})

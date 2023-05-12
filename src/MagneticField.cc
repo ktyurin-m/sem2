@@ -4,7 +4,7 @@
 #include "G4SystemOfUnits.hh"
 #include "globals.hh"
 
-namespace B5
+namespace project
 {
 
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -12,21 +12,34 @@ namespace B5
   MagneticField::MagneticField()
   {
     // define commands for this class
-    DefineCommands();
+    // DefineCommands();
   }
 
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
   MagneticField::~MagneticField()
   {
-    delete fMessenger;
+
   }
 
-  void MagneticField::GetFieldValue(const G4double[4], double *bField) const
+  void MagneticField::GetFieldValue(const G4double point[4], double *bField) const
   {
+    G4double Hm = 2*10182.6341*gauss;
+    G4double k = Hm/(95.);
+    if (std::abs(point[0])<=60.)
+    {
+      bField[1] = -Hm;
+    }
+    if (point[0]>60.){ //(+x)
+      bField[1] = k*(point[0]-155);
+    }
+    if (point[0]<-60.){
+      bField[1] = -( k*(point[0]+155));
+    }
+    // bField[1] = Hm;
     bField[0] = 0.;
-    bField[1] = fBy;
-    bField[2] = 0.;
+    
+    bField[2] = 0;
   }
 
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -34,16 +47,16 @@ namespace B5
   void MagneticField::DefineCommands()
   {
     // Define /B5/field command directory using generic messenger class
-    fMessenger = new G4GenericMessenger(this,
-                                        "/B5/field/",
-                                        "Field control");
+    // fMessenger = new G4GenericMessenger(this,
+    //                                     "/B5/field/",
+    //                                     "Field control");
 
-    // fieldValue command
-    auto &valueCmd = fMessenger->DeclareMethodWithUnit("value", "tesla",
-                                                       &MagneticField::SetField,
-                                                       "Set field strength.");
-    valueCmd.SetParameterName("field", true);
-    valueCmd.SetDefaultValue("1.");
+    // // fieldValue command
+    // auto &valueCmd = fMessenger->DeclareMethodWithUnit("value", "tesla",
+    //                                                    &MagneticField::SetField,
+    //                                                    "Set field strength.");
+    // valueCmd.SetParameterName("field", true);
+    // valueCmd.SetDefaultValue("1.");
   }
 
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
