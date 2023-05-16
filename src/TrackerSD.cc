@@ -47,21 +47,10 @@ void TrackerSD::Initialize(G4HCofThisEvent* hce)
 G4bool TrackerSD::ProcessHits(G4Step* aStep,
                                      G4TouchableHistory*)
 {
-  // energy deposit
- 
-  
-  // G4cout << aStep->GetTrack()->GetTrackID() << G4endl;
-  // if (aStep->GetTrack()->GetTrackID() != 1) return false;
-  G4double edep = aStep->GetTotalEnergyDeposit();
-  // G4cout << aStep->GetTrack()->GetTrackID() << G4endl;
-  if (edep==0.) return false;
-  TrackerHit* newHit = new TrackerHit();
-  if (GetTouch()==true){
 
-  //newHit->SetTrackID  (aStep->GetTrack()->GetTrackID());
-  //newHit->SetChamberNb(aStep->GetPreStepPoint()->GetTouchableHandle()
-                                               //->GetCopyNumber());
-  //newHit->SetEdep(edep);
+  G4double edep = aStep->GetTotalEnergyDeposit();
+  if (edep==0.) return true;
+  TrackerHit* newHit = new TrackerHit();
   auto touchable = aStep->GetPreStepPoint()->GetTouchable();
   auto transform = touchable->GetHistory()->GetTopTransform();
   auto worldPos = aStep->GetPreStepPoint()->GetPosition();
@@ -70,13 +59,8 @@ G4bool TrackerSD::ProcessHits(G4Step* aStep,
   newHit->SetPos (
     localPos
     );
-    fHitsCollection->insert( newHit );
-
-    SetTouch(false);
-  }
-  AddEdep(edep);
-  
-  
+  fHitsCollection->insert( newHit );
+  newHit->AddEdep(edep);
   return true;
 }
 
@@ -84,26 +68,22 @@ G4bool TrackerSD::ProcessHits(G4Step* aStep,
 
 void TrackerSD::EndOfEvent(G4HCofThisEvent*)
 {
-  // if ( true ) {
-  G4int nofHits = fHitsCollection->entries();
-    //  G4cout << G4endl
-    //         << "-------->Hits Collection: in this event they are " << nofHits
-    //         << " hits in the tracker chambers: " << G4endl;
-    //  for ( G4int i=0; i<nofHits; i++ ) {
-    //    G4cout << i << " " << (*fHitsCollection)[i]->GetPos().getZ() << G4endl;
-  //     };
-  SetTouch(true);
-    auto analysisManager = G4AnalysisManager::Instance();
-  for (G4int i = 0; i < nofHits; i++)
-  {
-    analysisManager->FillNtupleDColumn(0, (*fHitsCollection)[0]->GetPos().getX()); 
-    analysisManager->FillNtupleDColumn(1, (*fHitsCollection)[0]->GetPos().getY());
-    analysisManager->FillNtupleDColumn(2, (*fHitsCollection)[0]->GetPos().getZ());  
-    analysisManager->FillNtupleDColumn(3, GetEdep()); 
-    analysisManager->AddNtupleRow();
+  G4int Hits = fHitsCollection->entries();
+  G4cout << "Hits: " << Hits << G4endl;
+  if (Hits > 0){
+      auto analysisManager = G4AnalysisManager::Instance();
+      G4double FullEnergy = 0;
+      for (G4int i = 0; i < Hits; i++)
+        {
+          FullEnergy = FullEnergy + (*fHitsCollection)[i]->GetEdep();
+        }
+      analysisManager->FillNtupleDColumn(0, (*fHitsCollection)[0]->GetPos().getX());
+      analysisManager->FillNtupleDColumn(1, (*fHitsCollection)[0]->GetPos().getY());
+      analysisManager->FillNtupleDColumn(2, (*fHitsCollection)[0]->GetPos().getZ());  
+      analysisManager->FillNtupleDColumn(3, FullEnergy);
+      analysisManager->AddNtupleRow();
   }
-  G4cout << GetEdep() << G4endl;
-  SetEdep(0);
+
    
 
   

@@ -24,7 +24,7 @@ RunAction::RunAction()
   analysisManager->CreateNtupleDColumn("x");
   analysisManager->CreateNtupleDColumn("y");
   analysisManager->CreateNtupleDColumn("z");
-  analysisManager->CreateNtupleDColumn("Edep");
+  analysisManager->CreateNtupleDColumn("Energy");
   analysisManager->FinishNtuple();
 }
 

@@ -26,20 +26,21 @@ namespace project
   {
     G4double Hm = 2*10182.6341*gauss;
     G4double k = Hm/(95.);
-    if (std::abs(point[0])<=60.)
-    {
-      bField[1] = -Hm;
-    }
-    if (point[0]>60.){ //(+x)
-      bField[1] = k*(point[0]-155);
-    }
-    if (point[0]<-60.){
-      bField[1] = -( k*(point[0]+155));
-    }
-    // bField[1] = Hm;
+    // if (std::abs(point[0])<=60.)
+    // {
+    //   bField[1] = -Hm;
+    // }
+    // if (point[0]>60.){ //(+x)
+    //   bField[1] = k*(point[0]-155);
+    // }
+    // if (point[0]<-60.){
+    //   bField[1] = -( k*(point[0]+155));
+    // }
+    // // bField[1] = Hm;
     bField[0] = 0.;
     
     bField[2] = 0;
+    bField[1] = -Hm; 
   }
 
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

@@ -34,16 +34,14 @@ class TrackerSD : public G4VSensitiveDetector
     void   Initialize(G4HCofThisEvent* hitCollection) override;
     G4bool ProcessHits(G4Step* step, G4TouchableHistory* history) override;
     void   EndOfEvent(G4HCofThisEvent* hitCollection) override;
-    void SetTouch(G4bool t){touch = t;}
-    G4bool GetTouch(){return touch;};
-    void AddEdep(G4double de){Edep += de;};
-    void SetEdep(G4double de){Edep = de;};
-    G4double GetEdep(){return Edep;};
+    
 
   private:
     TrackerHitsCollection* fHitsCollection = nullptr;
-    G4bool touch = true;
-    G4double Edep = 0;
+    G4double posx = 0;
+    G4double posy = 0;
+    G4double posz = 0;
+
 };
 
 }
