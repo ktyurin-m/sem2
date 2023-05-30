@@ -41,6 +41,7 @@ void RunAction::BeginOfRunAction(const G4Run*)
   G4RunManager::GetRunManager()->SetRandomNumberStore(false);
   auto analysisManager = G4AnalysisManager::Instance();
   analysisManager->OpenFile( "out.root" );
+  G4cout << "Privet" <<G4endl;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

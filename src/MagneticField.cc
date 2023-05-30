@@ -24,7 +24,7 @@ namespace project
 
   void MagneticField::GetFieldValue(const G4double point[4], double *bField) const
   {
-    G4double Hm = 2*10182.6341*gauss;
+    G4double Hm = 9882.18390*gauss;
     G4double k = Hm/(95.);
     // if (std::abs(point[0])<=60.)
     // {

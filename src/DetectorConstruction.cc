@@ -20,7 +20,7 @@
 #include "G4UniformMagField.hh"
 #include "G4GeometryTolerance.hh"
 #include "G4GeometryManager.hh"
-
+#include "G4Mag_UsualEqRhs.hh"
 #include "G4UserLimits.hh"
 
 #include "G4VisAttributes.hh"
@@ -29,6 +29,7 @@
 #include "G4SystemOfUnits.hh"
 
 #include "G4FieldManager.hh"
+#include "G4EqMagElectricField.hh"
 using namespace project;
 
 namespace project
@@ -80,7 +81,7 @@ void DetectorConstruction::DefineMaterials()
   nistManager->FindOrBuildMaterial("G4_AIR");
 
   // Lead defined using NIST Manager
-  fTargetMaterial  = nistManager->FindOrBuildMaterial("G4_Au");
+  fTargetMaterial  = nistManager->FindOrBuildMaterial("G4_Pb");
 
   // Xenon gas defined using NIST Manager
   fChamberMaterial = nistManager->FindOrBuildMaterial("G4_Xe");
@@ -156,13 +157,13 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes()
 
   //detector
 
-  G4Box* solidbox = new G4Box("Box", 0.5*m,0.5*m,5*cm);
+  G4Box* solidbox = new G4Box("Box", 0.1*m,0.1*m,10*cm);
   Box = new G4LogicalVolume(solidbox,fTargetMaterial,"Box");
   G4RotationMatrix* rotate = new G4RotationMatrix();
-  rotate->rotateY(15.64165 * deg);
+  rotate->rotateY(6.8427734* deg);
 
   new G4PVPlacement(rotate,
-                    G4ThreeVector(-560,0, 1600/2*mm + 2*m),
+                    G4ThreeVector(-300*mm, 0, 2800*mm),
                     Box,
                     "Box",
                     worldLV,
@@ -194,7 +195,7 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes()
   G4double lengthG = 1600/2*mm;
   G4double widthG  = 310/2*mm;
   G4double heightG = 20/2*mm;
-  G4Box* gap = new G4Box("Box2", widthG,heightG,lengthG+1*mm);
+  G4Box* gap = new G4Box("Box2", widthG,heightG,lengthG + 1*mm);
 
   Gap = new G4LogicalVolume(gap, air,"Box2");
   
@@ -215,7 +216,7 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes()
   //
   // Sets a max step length in the tracker region, with G4StepLimiter
 
-  G4double maxStep = 1*mm;
+  G4double maxStep = 2*mm;
   fStepLimit = new G4UserLimits(maxStep);
   worldLV->SetUserLimits(fStepLimit);
 

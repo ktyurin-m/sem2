@@ -1,8 +1,8 @@
 /run/initialize
 /gps/particle e-
 /gps/ene/type Gauss
-/gps/ene/mono 1 GeV
-/gps/ene/sigma 200 MeV
+/gps/ene/mono 2 GeV
+/gps/ene/sigma 0 MeV
 /gps/direction 0.2493 0 0.968
-/gps/position -560 0 -2800 mm
+/gps/position 100 0 -2800 mm
 /run/beamOn 1

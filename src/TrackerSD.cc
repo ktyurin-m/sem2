@@ -69,7 +69,6 @@ G4bool TrackerSD::ProcessHits(G4Step* aStep,
 void TrackerSD::EndOfEvent(G4HCofThisEvent*)
 {
   G4int Hits = fHitsCollection->entries();
-  G4cout << "Hits: " << Hits << G4endl;
   if (Hits > 0){
       auto analysisManager = G4AnalysisManager::Instance();
       G4double FullEnergy = 0;
