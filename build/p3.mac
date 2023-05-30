@@ -25,5 +25,5 @@
 /gps/ang/maxphi 0 deg
 /gps/ang/maxtheta 10 deg
 
-/run/beamOn 100000
+/run/beamOn 300000
 #/control/shell mv out.root ../ou1.root
