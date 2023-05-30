@@ -1,0 +1,5 @@
+/run/initialize
+/gun/energy 196412831.06 eV
+/gun/particle e-
+
+/run/beamOn 1000000
