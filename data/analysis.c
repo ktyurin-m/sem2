@@ -10,7 +10,7 @@
 
 
 void analysis(){
-    TFile *f = new TFile("check_with_air.root");
+    TFile *f = new TFile("out.root");
     TTree *t = (TTree*)f->Get("Data");
     Double_t z;
     Double_t y;
@@ -22,8 +22,8 @@ void analysis(){
     t->SetBranchAddress("Energy",&Energy);
 
     TH2F *h1 = new TH2F("h1","h1",100,-250,250,100,-250,250);
-    TH2F *h2 = new TH2F("h2","h2",100,-100,100,100,1900,2000);
-    TH1F *h3  = new TH1F("h3","h3",100, 1900,2000) ; //energy
+    TH2F *h2 = new TH2F("h2","h2",100,-250,250,100,1900,2000);
+    TH1F *h3  = new TH1F("h3","h3",300, 1900,2000) ; //energy
     TH1F *h4  = new TH1F("h3","h3",300, -250,250) ;
     Int_t ent = t->GetEntries();
     // TF1 *g1 = new TF1("g1", "gaus", 1960, 2000);
@@ -58,7 +58,7 @@ void analysis(){
     h3->GetXaxis()->SetTitle("Energy");
 	h3->SetTitle("");
     h3->Draw();
-	TF1 *f_cb= new TF1("MyCrystalBall", "crystalball", 1950, 2000);
+	TF1 *f_cb= new TF1("MyCrystalBall", "crystalball", 1900, 2000);
 	f_cb->SetParameters(h3->GetBinContent(h3->GetMaximumBin()), h3->GetMean(), h3->GetRMS(), 1, 1.5);
 	f_cb->SetLineColor(kRed);
 	f_cb->SetLineWidth(5);

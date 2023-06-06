@@ -78,7 +78,7 @@ void DetectorConstruction::DefineMaterials()
   G4NistManager* nistManager = G4NistManager::Instance();
 
   // Air defined using NIST Manager
-  nistManager->FindOrBuildMaterial("G4_AIR");
+  nistManager->FindOrBuildMaterial("G4_Galactic");
 
   // Lead defined using NIST Manager
   fTargetMaterial  = nistManager->FindOrBuildMaterial("G4_Pb");
@@ -95,7 +95,7 @@ void DetectorConstruction::DefineMaterials()
 
 G4VPhysicalVolume* DetectorConstruction::DefineVolumes()
 {
-  G4Material* air  = G4Material::GetMaterial("G4_AIR");
+  G4Material* air  = G4Material::GetMaterial("G4_Galactic");
   
   // Sizes of the principal geometrical components (solids)
 

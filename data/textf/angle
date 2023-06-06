@@ -1,0 +1,13 @@
+
+Processing analysis.c...
+ FCN=1607.19 FROM MIGRAD    STATUS=CONVERGED     431 CALLS         432 TOTAL
+                     EDM=3.7347e-07    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   1.2 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     2.82948e+03   1.58006e+01   8.41421e-03  -1.16350e-04
+   2  Mean         1.98853e+03   1.02057e-01  -1.27568e-04   8.38138e-03
+   3  Sigma        4.35226e+00   5.46319e-02   6.69941e-05  -8.98760e-02
+   4  Alpha        2.33507e-01   5.49081e-03   7.03390e-06   1.35098e+00
+   5  N            6.02966e+00   3.75345e-01  -1.84663e-04   7.88358e-03
+E_mean: 1988.53 +/- 0.102057
+E_sigma: 4.35226 +/- 0.0546319

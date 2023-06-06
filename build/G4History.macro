@@ -21,8 +21,6 @@
 /vis/scene/notifyHandlers scene-0
 /vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 2
 /vis/scene/notifyHandlers scene-0
-/vis/scene/add/hits
-/vis/scene/notifyHandlers
 /vis/scene/add/axes
 /vis/scene/notifyHandlers
 /vis/scene/endOfEventAction accumulate
@@ -57,3 +55,11 @@
 /gui/addButton viewer "Update viewer (interaction or end-of-file)" "/vis/viewer/update"
 /gui/addButton viewer "Flush viewer (= refresh + update)" "/vis/viewer/flush"
 /gui/addButton viewer "Update scene" "/vis/scene/notifyHandlers"
+/control/execute run2.mac
+/run/initialize
+/gps/particle e-
+/gps/ene/type Mono
+/gps/ene/mono 2000 MeV
+/gps/direction 0.1191452 0 0.9928768
+/gps/position -11.95 0 -127.14 cm
+/run/beamOn 10
