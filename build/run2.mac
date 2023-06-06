@@ -1,9 +1,0 @@
-/run/initialize
-/gps/particle e-
-/gps/ene/type Mono
-/gps/ene/mono 2000 MeV
-/gps/direction 0.1191452 0 0.9928768
-/gps/position -11.95 0 -127.14 cm
-/run/beamOn 10
-
-

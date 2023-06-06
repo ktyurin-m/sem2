@@ -4,15 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/kirill/nir/geant4/sem2/project.cc" "/home/kirill/nir/geant4/sem2/build/CMakeFiles/project.dir/project.cc.o"
-  "/home/kirill/nir/geant4/sem2/src/ActionInitialization.cc" "/home/kirill/nir/geant4/sem2/build/CMakeFiles/project.dir/src/ActionInitialization.cc.o"
-  "/home/kirill/nir/geant4/sem2/src/DetectorConstruction.cc" "/home/kirill/nir/geant4/sem2/build/CMakeFiles/project.dir/src/DetectorConstruction.cc.o"
-  "/home/kirill/nir/geant4/sem2/src/EventAction.cc" "/home/kirill/nir/geant4/sem2/build/CMakeFiles/project.dir/src/EventAction.cc.o"
-  "/home/kirill/nir/geant4/sem2/src/MagneticField.cc" "/home/kirill/nir/geant4/sem2/build/CMakeFiles/project.dir/src/MagneticField.cc.o"
-  "/home/kirill/nir/geant4/sem2/src/PrimaryGeneratorAction.cc" "/home/kirill/nir/geant4/sem2/build/CMakeFiles/project.dir/src/PrimaryGeneratorAction.cc.o"
-  "/home/kirill/nir/geant4/sem2/src/RunAction.cc" "/home/kirill/nir/geant4/sem2/build/CMakeFiles/project.dir/src/RunAction.cc.o"
-  "/home/kirill/nir/geant4/sem2/src/TrackerHit.cc" "/home/kirill/nir/geant4/sem2/build/CMakeFiles/project.dir/src/TrackerHit.cc.o"
-  "/home/kirill/nir/geant4/sem2/src/TrackerSD.cc" "/home/kirill/nir/geant4/sem2/build/CMakeFiles/project.dir/src/TrackerSD.cc.o"
+  "/home/tyutrin/nir/sem2/project.cc" "/home/tyutrin/nir/sem2/build/CMakeFiles/project.dir/project.cc.o"
+  "/home/tyutrin/nir/sem2/src/ActionInitialization.cc" "/home/tyutrin/nir/sem2/build/CMakeFiles/project.dir/src/ActionInitialization.cc.o"
+  "/home/tyutrin/nir/sem2/src/DetectorConstruction.cc" "/home/tyutrin/nir/sem2/build/CMakeFiles/project.dir/src/DetectorConstruction.cc.o"
+  "/home/tyutrin/nir/sem2/src/EventAction.cc" "/home/tyutrin/nir/sem2/build/CMakeFiles/project.dir/src/EventAction.cc.o"
+  "/home/tyutrin/nir/sem2/src/MagneticField.cc" "/home/tyutrin/nir/sem2/build/CMakeFiles/project.dir/src/MagneticField.cc.o"
+  "/home/tyutrin/nir/sem2/src/PrimaryGeneratorAction.cc" "/home/tyutrin/nir/sem2/build/CMakeFiles/project.dir/src/PrimaryGeneratorAction.cc.o"
+  "/home/tyutrin/nir/sem2/src/RunAction.cc" "/home/tyutrin/nir/sem2/build/CMakeFiles/project.dir/src/RunAction.cc.o"
+  "/home/tyutrin/nir/sem2/src/TrackerHit.cc" "/home/tyutrin/nir/sem2/build/CMakeFiles/project.dir/src/TrackerHit.cc.o"
+  "/home/tyutrin/nir/sem2/src/TrackerSD.cc" "/home/tyutrin/nir/sem2/build/CMakeFiles/project.dir/src/TrackerSD.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -23,6 +23,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
   "G4UI_USE_TCSH"
   "G4VIS_USE_OPENGL"
   "G4VIS_USE_OPENGLQT"
+  "G4VIS_USE_OPENGLX"
   "QT_CORE_LIB"
   "QT_GUI_LIB"
   "QT_NO_DEBUG"
@@ -34,7 +35,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include"
-  "/home/kirill/Geant4/geant4-install/include/Geant4"
+  "/home/soft/geant4_v11/include/Geant4"
   "/usr/include/x86_64-linux-gnu/qt5"
   "/usr/include/x86_64-linux-gnu/qt5/QtGui"
   "/usr/include/x86_64-linux-gnu/qt5/QtCore"
@@ -42,6 +43,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/x86_64-linux-gnu/qt5/QtOpenGL"
   "/usr/include/x86_64-linux-gnu/qt5/QtWidgets"
   "/usr/include/x86_64-linux-gnu/qt5/QtPrintSupport"
+  "/usr/include/freetype2"
   )
 
 # Targets to which this target links.

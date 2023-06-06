@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kirill/nir/geant4/sem2
+CMAKE_SOURCE_DIR = /home/tyutrin/nir/sem2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kirill/nir/geant4/sem2/build
+CMAKE_BINARY_DIR = /home/tyutrin/nir/sem2/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/project.dir/depend.make
@@ -59,120 +59,120 @@ include CMakeFiles/project.dir/flags.make
 
 CMakeFiles/project.dir/project.cc.o: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/project.cc.o: ../project.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kirill/nir/geant4/sem2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/project.dir/project.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/project.cc.o -c /home/kirill/nir/geant4/sem2/project.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tyutrin/nir/sem2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/project.dir/project.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/project.cc.o -c /home/tyutrin/nir/sem2/project.cc
 
 CMakeFiles/project.dir/project.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project.dir/project.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kirill/nir/geant4/sem2/project.cc > CMakeFiles/project.dir/project.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tyutrin/nir/sem2/project.cc > CMakeFiles/project.dir/project.cc.i
 
 CMakeFiles/project.dir/project.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project.dir/project.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kirill/nir/geant4/sem2/project.cc -o CMakeFiles/project.dir/project.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tyutrin/nir/sem2/project.cc -o CMakeFiles/project.dir/project.cc.s
 
 CMakeFiles/project.dir/src/ActionInitialization.cc.o: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/src/ActionInitialization.cc.o: ../src/ActionInitialization.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kirill/nir/geant4/sem2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/project.dir/src/ActionInitialization.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/src/ActionInitialization.cc.o -c /home/kirill/nir/geant4/sem2/src/ActionInitialization.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tyutrin/nir/sem2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/project.dir/src/ActionInitialization.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/src/ActionInitialization.cc.o -c /home/tyutrin/nir/sem2/src/ActionInitialization.cc
 
 CMakeFiles/project.dir/src/ActionInitialization.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project.dir/src/ActionInitialization.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kirill/nir/geant4/sem2/src/ActionInitialization.cc > CMakeFiles/project.dir/src/ActionInitialization.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tyutrin/nir/sem2/src/ActionInitialization.cc > CMakeFiles/project.dir/src/ActionInitialization.cc.i
 
 CMakeFiles/project.dir/src/ActionInitialization.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project.dir/src/ActionInitialization.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kirill/nir/geant4/sem2/src/ActionInitialization.cc -o CMakeFiles/project.dir/src/ActionInitialization.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tyutrin/nir/sem2/src/ActionInitialization.cc -o CMakeFiles/project.dir/src/ActionInitialization.cc.s
 
 CMakeFiles/project.dir/src/DetectorConstruction.cc.o: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/src/DetectorConstruction.cc.o: ../src/DetectorConstruction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kirill/nir/geant4/sem2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/project.dir/src/DetectorConstruction.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/src/DetectorConstruction.cc.o -c /home/kirill/nir/geant4/sem2/src/DetectorConstruction.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tyutrin/nir/sem2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/project.dir/src/DetectorConstruction.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/src/DetectorConstruction.cc.o -c /home/tyutrin/nir/sem2/src/DetectorConstruction.cc
 
 CMakeFiles/project.dir/src/DetectorConstruction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project.dir/src/DetectorConstruction.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kirill/nir/geant4/sem2/src/DetectorConstruction.cc > CMakeFiles/project.dir/src/DetectorConstruction.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tyutrin/nir/sem2/src/DetectorConstruction.cc > CMakeFiles/project.dir/src/DetectorConstruction.cc.i
 
 CMakeFiles/project.dir/src/DetectorConstruction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project.dir/src/DetectorConstruction.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kirill/nir/geant4/sem2/src/DetectorConstruction.cc -o CMakeFiles/project.dir/src/DetectorConstruction.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tyutrin/nir/sem2/src/DetectorConstruction.cc -o CMakeFiles/project.dir/src/DetectorConstruction.cc.s
 
 CMakeFiles/project.dir/src/EventAction.cc.o: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/src/EventAction.cc.o: ../src/EventAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kirill/nir/geant4/sem2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/project.dir/src/EventAction.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/src/EventAction.cc.o -c /home/kirill/nir/geant4/sem2/src/EventAction.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tyutrin/nir/sem2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/project.dir/src/EventAction.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/src/EventAction.cc.o -c /home/tyutrin/nir/sem2/src/EventAction.cc
 
 CMakeFiles/project.dir/src/EventAction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project.dir/src/EventAction.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kirill/nir/geant4/sem2/src/EventAction.cc > CMakeFiles/project.dir/src/EventAction.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tyutrin/nir/sem2/src/EventAction.cc > CMakeFiles/project.dir/src/EventAction.cc.i
 
 CMakeFiles/project.dir/src/EventAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project.dir/src/EventAction.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kirill/nir/geant4/sem2/src/EventAction.cc -o CMakeFiles/project.dir/src/EventAction.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tyutrin/nir/sem2/src/EventAction.cc -o CMakeFiles/project.dir/src/EventAction.cc.s
 
 CMakeFiles/project.dir/src/MagneticField.cc.o: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/src/MagneticField.cc.o: ../src/MagneticField.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kirill/nir/geant4/sem2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/project.dir/src/MagneticField.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/src/MagneticField.cc.o -c /home/kirill/nir/geant4/sem2/src/MagneticField.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tyutrin/nir/sem2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/project.dir/src/MagneticField.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/src/MagneticField.cc.o -c /home/tyutrin/nir/sem2/src/MagneticField.cc
 
 CMakeFiles/project.dir/src/MagneticField.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project.dir/src/MagneticField.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kirill/nir/geant4/sem2/src/MagneticField.cc > CMakeFiles/project.dir/src/MagneticField.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tyutrin/nir/sem2/src/MagneticField.cc > CMakeFiles/project.dir/src/MagneticField.cc.i
 
 CMakeFiles/project.dir/src/MagneticField.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project.dir/src/MagneticField.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kirill/nir/geant4/sem2/src/MagneticField.cc -o CMakeFiles/project.dir/src/MagneticField.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tyutrin/nir/sem2/src/MagneticField.cc -o CMakeFiles/project.dir/src/MagneticField.cc.s
 
 CMakeFiles/project.dir/src/PrimaryGeneratorAction.cc.o: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/src/PrimaryGeneratorAction.cc.o: ../src/PrimaryGeneratorAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kirill/nir/geant4/sem2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/project.dir/src/PrimaryGeneratorAction.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/src/PrimaryGeneratorAction.cc.o -c /home/kirill/nir/geant4/sem2/src/PrimaryGeneratorAction.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tyutrin/nir/sem2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/project.dir/src/PrimaryGeneratorAction.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/src/PrimaryGeneratorAction.cc.o -c /home/tyutrin/nir/sem2/src/PrimaryGeneratorAction.cc
 
 CMakeFiles/project.dir/src/PrimaryGeneratorAction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project.dir/src/PrimaryGeneratorAction.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kirill/nir/geant4/sem2/src/PrimaryGeneratorAction.cc > CMakeFiles/project.dir/src/PrimaryGeneratorAction.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tyutrin/nir/sem2/src/PrimaryGeneratorAction.cc > CMakeFiles/project.dir/src/PrimaryGeneratorAction.cc.i
 
 CMakeFiles/project.dir/src/PrimaryGeneratorAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project.dir/src/PrimaryGeneratorAction.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kirill/nir/geant4/sem2/src/PrimaryGeneratorAction.cc -o CMakeFiles/project.dir/src/PrimaryGeneratorAction.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tyutrin/nir/sem2/src/PrimaryGeneratorAction.cc -o CMakeFiles/project.dir/src/PrimaryGeneratorAction.cc.s
 
 CMakeFiles/project.dir/src/RunAction.cc.o: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/src/RunAction.cc.o: ../src/RunAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kirill/nir/geant4/sem2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/project.dir/src/RunAction.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/src/RunAction.cc.o -c /home/kirill/nir/geant4/sem2/src/RunAction.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tyutrin/nir/sem2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/project.dir/src/RunAction.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/src/RunAction.cc.o -c /home/tyutrin/nir/sem2/src/RunAction.cc
 
 CMakeFiles/project.dir/src/RunAction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project.dir/src/RunAction.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kirill/nir/geant4/sem2/src/RunAction.cc > CMakeFiles/project.dir/src/RunAction.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tyutrin/nir/sem2/src/RunAction.cc > CMakeFiles/project.dir/src/RunAction.cc.i
 
 CMakeFiles/project.dir/src/RunAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project.dir/src/RunAction.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kirill/nir/geant4/sem2/src/RunAction.cc -o CMakeFiles/project.dir/src/RunAction.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tyutrin/nir/sem2/src/RunAction.cc -o CMakeFiles/project.dir/src/RunAction.cc.s
 
 CMakeFiles/project.dir/src/TrackerHit.cc.o: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/src/TrackerHit.cc.o: ../src/TrackerHit.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kirill/nir/geant4/sem2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/project.dir/src/TrackerHit.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/src/TrackerHit.cc.o -c /home/kirill/nir/geant4/sem2/src/TrackerHit.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tyutrin/nir/sem2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/project.dir/src/TrackerHit.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/src/TrackerHit.cc.o -c /home/tyutrin/nir/sem2/src/TrackerHit.cc
 
 CMakeFiles/project.dir/src/TrackerHit.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project.dir/src/TrackerHit.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kirill/nir/geant4/sem2/src/TrackerHit.cc > CMakeFiles/project.dir/src/TrackerHit.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tyutrin/nir/sem2/src/TrackerHit.cc > CMakeFiles/project.dir/src/TrackerHit.cc.i
 
 CMakeFiles/project.dir/src/TrackerHit.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project.dir/src/TrackerHit.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kirill/nir/geant4/sem2/src/TrackerHit.cc -o CMakeFiles/project.dir/src/TrackerHit.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tyutrin/nir/sem2/src/TrackerHit.cc -o CMakeFiles/project.dir/src/TrackerHit.cc.s
 
 CMakeFiles/project.dir/src/TrackerSD.cc.o: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/src/TrackerSD.cc.o: ../src/TrackerSD.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kirill/nir/geant4/sem2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/project.dir/src/TrackerSD.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/src/TrackerSD.cc.o -c /home/kirill/nir/geant4/sem2/src/TrackerSD.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tyutrin/nir/sem2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/project.dir/src/TrackerSD.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/src/TrackerSD.cc.o -c /home/tyutrin/nir/sem2/src/TrackerSD.cc
 
 CMakeFiles/project.dir/src/TrackerSD.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project.dir/src/TrackerSD.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kirill/nir/geant4/sem2/src/TrackerSD.cc > CMakeFiles/project.dir/src/TrackerSD.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tyutrin/nir/sem2/src/TrackerSD.cc > CMakeFiles/project.dir/src/TrackerSD.cc.i
 
 CMakeFiles/project.dir/src/TrackerSD.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project.dir/src/TrackerSD.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kirill/nir/geant4/sem2/src/TrackerSD.cc -o CMakeFiles/project.dir/src/TrackerSD.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tyutrin/nir/sem2/src/TrackerSD.cc -o CMakeFiles/project.dir/src/TrackerSD.cc.s
 
 # Object files for target project
 project_OBJECTS = \
@@ -199,49 +199,56 @@ project: CMakeFiles/project.dir/src/RunAction.cc.o
 project: CMakeFiles/project.dir/src/TrackerHit.cc.o
 project: CMakeFiles/project.dir/src/TrackerSD.cc.o
 project: CMakeFiles/project.dir/build.make
-project: /home/kirill/Geant4/geant4-install/lib/libG4Tree.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4FR.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4GMocren.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4visHepRep.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4RayTracer.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4VRML.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4OpenGL.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4gl2ps.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4vis_management.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4modeling.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4interfaces.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4persistency.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4error_propagation.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4readout.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4physicslists.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4tasking.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4parmodels.so
+project: /home/soft/geant4_v11/lib/libG4Tree.so
+project: /home/soft/geant4_v11/lib/libG4FR.so
+project: /home/soft/geant4_v11/lib/libG4GMocren.so
+project: /home/soft/geant4_v11/lib/libG4visHepRep.so
+project: /home/soft/geant4_v11/lib/libG4RayTracer.so
+project: /home/soft/geant4_v11/lib/libG4VRML.so
+project: /home/soft/geant4_v11/lib/libG4OpenGL.so
+project: /home/soft/geant4_v11/lib/libG4gl2ps.so
+project: /home/soft/geant4_v11/lib/libG4vis_management.so
+project: /home/soft/geant4_v11/lib/libG4modeling.so
+project: /home/soft/geant4_v11/lib/libG4interfaces.so
+project: /home/soft/geant4_v11/lib/libG4persistency.so
+project: /home/soft/geant4_v11/lib/libG4error_propagation.so
+project: /home/soft/geant4_v11/lib/libG4readout.so
+project: /home/soft/geant4_v11/lib/libG4physicslists.so
+project: /home/soft/geant4_v11/lib/libG4tasking.so
+project: /home/soft/geant4_v11/lib/libG4parmodels.so
 project: /usr/lib/x86_64-linux-gnu/libGL.so
 project: /usr/lib/x86_64-linux-gnu/libQt5OpenGL.so.5.12.8
 project: /usr/lib/x86_64-linux-gnu/libQt5PrintSupport.so.5.12.8
 project: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.12.8
 project: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.12.8
 project: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8
-project: /home/kirill/Geant4/geant4-install/lib/libG4run.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4event.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4tracking.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4processes.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4analysis.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4tools.so
-project: /usr/lib/x86_64-linux-gnu/libz.so
+project: /usr/lib/x86_64-linux-gnu/libXmu.so
+project: /usr/lib/x86_64-linux-gnu/libXext.so
+project: /usr/lib/x86_64-linux-gnu/libXt.so
+project: /usr/lib/x86_64-linux-gnu/libICE.so
+project: /usr/lib/x86_64-linux-gnu/libSM.so
+project: /usr/lib/x86_64-linux-gnu/libX11.so
+project: /home/soft/geant4_v11/lib/libG4run.so
+project: /home/soft/geant4_v11/lib/libG4event.so
+project: /home/soft/geant4_v11/lib/libG4tracking.so
+project: /home/soft/geant4_v11/lib/libG4processes.so
+project: /home/soft/geant4_v11/lib/libG4analysis.so
+project: /home/soft/geant4_v11/lib/libG4tools.so
+project: /usr/lib/x86_64-linux-gnu/libfreetype.so
 project: /usr/lib/x86_64-linux-gnu/libexpat.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4digits_hits.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4track.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4particles.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4geometry.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4materials.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4graphics_reps.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4intercoms.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4global.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4clhep.so
-project: /home/kirill/Geant4/geant4-install/lib/libG4ptl.so.0.0.2
+project: /home/soft/geant4_v11/lib/libG4digits_hits.so
+project: /home/soft/geant4_v11/lib/libG4track.so
+project: /home/soft/geant4_v11/lib/libG4particles.so
+project: /home/soft/geant4_v11/lib/libG4geometry.so
+project: /home/soft/geant4_v11/lib/libG4materials.so
+project: /home/soft/geant4_v11/lib/libG4zlib.so
+project: /home/soft/geant4_v11/lib/libG4graphics_reps.so
+project: /home/soft/geant4_v11/lib/libG4intercoms.so
+project: /home/soft/geant4_v11/lib/libG4global.so
+project: /home/soft/geant4_v11/lib/libG4clhep.so
+project: /home/soft/geant4_v11/lib/libG4ptl.so.0.0.2
 project: CMakeFiles/project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kirill/nir/geant4/sem2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tyutrin/nir/sem2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable project"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/project.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -254,6 +261,6 @@ CMakeFiles/project.dir/clean:
 .PHONY : CMakeFiles/project.dir/clean
 
 CMakeFiles/project.dir/depend:
-	cd /home/kirill/nir/geant4/sem2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kirill/nir/geant4/sem2 /home/kirill/nir/geant4/sem2 /home/kirill/nir/geant4/sem2/build /home/kirill/nir/geant4/sem2/build /home/kirill/nir/geant4/sem2/build/CMakeFiles/project.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/tyutrin/nir/sem2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tyutrin/nir/sem2 /home/tyutrin/nir/sem2 /home/tyutrin/nir/sem2/build /home/tyutrin/nir/sem2/build /home/tyutrin/nir/sem2/build/CMakeFiles/project.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/project.dir/depend
 

@@ -7,23 +7,22 @@
 
 
 #postion:
-#/gps/direction 0.2493 0 0.968
-#/gps/position -560 0 -2800 mm
-/gps/position -11.95 0 -127.14 cm
+/gps/direction 0.2493 0 0.968
+/gps/position -560 0 -2800 mm
 
 
-#/gps/pos/type Plane
-#/gps/pos/shape Circle
-#/gps/pos/radius 2 cm
-#/gps/pos/rot1 -0.2493 0 0.968
+/gps/pos/type Plane
+/gps/pos/shape Circle
+/gps/pos/radius 2 cm
+/gps/pos/rot1 -0.2493 0 0.968
 
 
 #angle:
-/gps/ang/rot1 -0.9997 0 0.0244
+/gps/ang/rot1 -0.98279 0 0.18467
 /gps/ang/type iso
-/gps/ang/minphi 0 deg
-/gps/ang/maxphi 0 deg
+/gps/ang/minphi -10 deg
+/gps/ang/maxphi 10 deg
 /gps/ang/maxtheta 10 deg
 
-/run/beamOn 300000
-#/control/shell mv out.root ../ou1.root
+/run/beamOn 1000
+/control/shell mv out.root ../ou1.root
